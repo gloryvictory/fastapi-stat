@@ -7,7 +7,7 @@ from sqlalchemy import pool
 from alembic import context
 
 from src.cfg import DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME
-from src.lstat.models import TEST_M
+from src.lstat.models import LSTAT_M
 from src    import cfg
 
 # this is the Alembic Config object, which provides
@@ -28,7 +28,7 @@ config.set_main_option("sqlalchemy.url", DB_DSN)
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-target_metadata = [TEST_M.Meta.metadata]
+target_metadata = [LSTAT_M.Meta.metadata]
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode.

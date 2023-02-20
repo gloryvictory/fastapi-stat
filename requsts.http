@@ -1,0 +1,30 @@
+
+###
+GET http://localhost:8888/api/v1/lstat/  HTTP/1.1
+
+
+
+###
+POST http://localhost:8888/api/v1/lstat/  HTTP/1.1
+Content-Type: application/json
+
+{
+  "fl_db": "PG",
+  "fl_name": "db.user.Table1",
+  "fl_title": "тестовый слой",
+  "fl_count": 204,
+  "fl_guid": "ae187b5-9f23-11e9-810a-005056a77ba6"
+}
+
+
+###
+POST http://localhost:8888/api/v1/lstat/  HTTP/1.1
+Content-Type: application/json
+
+{
+  "fl_db": "ORACLE",
+  "fl_name": "db.user.Table2",
+  "fl_title": "тестовый слой2",
+  "fl_count": 203,
+  "fl_guid": "bb187b5-9f23-11e9-810a-005056a77ba6"
+}

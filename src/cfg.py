@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 from time import strftime  # Load just the strftime Module from Time
 
-load_dotenv()
+load_dotenv() # прочитали все из .env
 
 API_VERSION = "/api/v1"
 
@@ -25,4 +25,4 @@ FILE_LOG_NAME = 'fastapi-stat'
 FILE_LOG = DATETIME_CURRENT + '_' + FILE_LOG_NAME + '.log'
 FILE_LOG_FORMAT = '%(asctime)s %(levelname)s %(message)s'
 FOLDER_OUT = 'log'
-FOLDER_BASE = os.getenv("FOLDER_BASE", "C:\\Glory\\Projects\\Python\\zsniigg\\fastapi-lstat\\src")
+FOLDER_BASE = os.getenv("FOLDER_BASE", "C:\\Glory\\Projects\\Python\\gloryvictory\\fastapi-stat\\src")

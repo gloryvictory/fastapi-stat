@@ -32,9 +32,9 @@ class BaseClass(ormar.Model):
     fl_date: Optional[datetime] = ormar.DateTime(default=datetime.now)
 
 
-class TEST_M(BaseClass):
+class LSTAT_M(BaseClass):
     class Meta(MainMeta):
-        tablename = "TEST"
+        tablename = "LSTAT"
         pass
 
 
