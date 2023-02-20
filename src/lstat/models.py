@@ -1,5 +1,7 @@
 # from sqlalchemy import Table, Column, Integer, String, TIMESTAMP, MetaData, TEXT, BIGINT
 from datetime import datetime
+from typing import Optional
+
 import ormar
 
 
@@ -21,13 +23,13 @@ class BaseClass(ormar.Model):
         # tablename = "Fields"
         pass
 
-    id: int = ormar.Integer(primary_key=True)
+    id: Optional[int] = ormar.Integer(primary_key=True)
     fl_db: str = ormar.String(max_length=255, index=True)
     fl_name: str = ormar.String(max_length=255, index=True)
     fl_title: str = ormar.String(max_length=255, index=True)
     fl_count:int = ormar.BigInteger()
     fl_guid: str = ormar.String(max_length=255, index=True)
-    fl_date: datetime = ormar.DateTime(default=datetime.now)
+    fl_date: Optional[datetime] = ormar.DateTime(default=datetime.now)
 
 
 class TEST_M(BaseClass):
