@@ -3,10 +3,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from src.lstat.models import LSTAT_M
 from src.lstat.services import stat_get_all, stat_create_item, stat_get_all_by_name
 
-router_stat = APIRouter(
-    # prefix="/lstat",
-    tags=["Статистика"]
-)
+# prefix="/lstat",
+router_stat = APIRouter(tags=["Статистика"])
 
 
 @router_stat.get(path="/",
@@ -35,7 +33,7 @@ async def create_item(item: LSTAT_M):
                  status_code=200,
                  name='Получить список по конкретному слою',
                  tags=['Статистика'],
-                 description='Получает список статистики по конкретному слою'
+                 description='Получает список статистики по конкретному слою. Пример: http://<server>:<port>/api/v1/lstat/db.user.table'
                  )
 async def get_all(fl_name: str):
     content = await stat_get_all_by_name(fl_name)
