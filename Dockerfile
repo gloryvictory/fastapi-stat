@@ -10,15 +10,15 @@ FROM python:latest
 WORKDIR /app
 ENV PYTHONPATH="${PYTHONPATH}:/app"
 ENV SERVER_HOST="0.0.0.0"
-ENV PORT=8888
+ENV PORT=8001
 ENV FOLDER_BASE=/app/src
 
 ENV DB_HOST=server
 ENV DB_PORT=5432
-ENV DB_NAME=test
-ENV DB_USER=test
-ENV DB_PASS=test
-ENV DB_SCHEMA=test
+ENV DB_NAME=lstat
+ENV DB_USER=lstat
+ENV DB_PASS=lstatpwd
+ENV DB_SCHEMA=lstat
 
 RUN pip3 install -U pip
 
@@ -35,4 +35,4 @@ EXPOSE 8888
 
 # Execute
 #CMD ["python", "main.py"]
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8001"]
